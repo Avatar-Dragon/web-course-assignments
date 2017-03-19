@@ -1,0 +1,253 @@
+/*
+    姓名：李泽龙
+    学号：14331144
+    任务：作业3，给定一个初始的html文件(index.html)，编写相应的css文件(style.css)，做成一个有动作的菜单
+    思路：以button为中心，让info-bar, control-ring-container和apb的位置依赖于button的位置。
+    而info-bar的children则依赖于info-bar的位置。control-ring-container和apb同理。
+    版本2:修改@+的延迟收回时间, 使之延迟更明显; 修改了“20”的字体大小。
+*/
+
+/*
+    body：占满整个页面
+    button：位于页面中间底部
+*/
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#at-plus-container {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bottom-positioner {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 400px;
+}
+
+#button {
+    position: absolute;
+    height: 27px;
+    width: 27px;
+    left: 183.5px;
+    top: 183.5px;
+    transition: all 0.5s;
+}
+
+/*改变button占领的大小，使得只有当鼠标移开变大后的button部分，菜单才会缩小*/
+#button:hover {
+    height: 300px;
+    width: 200px;
+    left: 100px;
+    top: 0px;
+}
+
+/*
+    控制info-bar部分的动画
+*/
+#info-bar {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: #7E7E7E;
+    overflow: hidden;
+    transition: all 0.5s;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+/*由于button的位置会在hover后改变，因此info-bar得位置也应该改变*/
+#button:hover #info-bar {
+    width: 130px;
+    height: 130px;
+    bottom: 135px;
+    right: 35px;
+} 
+
+#info-bar .info ul {
+    margin-top: 10px;
+    padding: 0px;
+}
+
+#info-bar .info li {
+    margin-top: 5px;
+    color: white;
+    text-align: center;
+    list-style:none;
+}
+
+#info-bar .info img {
+    vertical-align: middle;
+}
+
+/*为了让mine posted和mine like能在同一行*/
+#info-bar .mine.posted {
+    float: left;
+    width: 50%;
+}
+
+#info-bar span {
+    margin-left: 8px;
+    font-family: "Arial", sans-serif;
+}
+
+#info-bar .page.comment span {
+    font-size: 28px;
+}
+
+#info-bar .mine.like span, .mine.posted span {
+    color: #079E6E;
+}
+
+/*
+    控制control-ring-container部分的动画
+*/
+#control-ring-container {
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+#button:hover #control-ring-container {
+    bottom: 86.5px;
+    right: 86.5px;
+}
+
+#control-ring li {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background-color: #646464;
+    background-size: 17px 17px;
+    list-style:none;
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+#button:hover #control-ring li {
+    opacity: 1;
+}
+
+/*不知道为什么，在这个样式加上#control-ring-container, .mask.button的背景色就看不到了*/
+.mask.button {
+    background: url('/images/ringButtonImages/nomask.png') center no-repeat;
+}
+
+#button:hover .mask.button {
+    bottom: 38px;
+    right: 59px;
+}
+
+.history.button {
+    background: url('/images/ringButtonImages/history.png') center no-repeat;
+}
+
+#button:hover .history.button {
+    bottom: 0px;
+    right: 70px;
+}
+
+.message.button {
+    background: url('/images/ringButtonImages/message.png') center no-repeat;
+}
+
+#button:hover .message.button {
+    bottom: -38px;
+    right: 59px;
+}
+
+/*让unread紧挨在message button的右上角*/
+.message.button .unread {
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    color: white;
+    background-color: #FF3831;
+    width: 20px;
+    height: 19px;
+    border-radius: 50%;
+    text-align:center;
+    padding-top: 1px;
+    font-size: 15px;
+    font-family: arial;
+}
+
+.setting.button {
+    background: url('/images/ringButtonImages/setting.png') center no-repeat;
+}
+
+#button:hover .setting.button {
+    bottom: -66px;
+    right: 25px;
+}
+
+.sign.button {
+    background: url('/images/ringButtonImages/signin.png') center no-repeat;
+}
+
+#button:hover .sign.button {
+    bottom: -66px;
+    right: -25px;
+}
+
+/*
+    控制apb部分的动画apb
+*/
+#button .apb {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: #9A9ECE;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    /*transform大小时要延时一会*/
+    transition: all 0.5s, transform 0.5s linear 0.4s;
+}
+
+#button:hover .apb {
+    bottom: 86.5px;
+    right: 86.5px;
+    transform: scale(2.0);
+    background-color: rgba(48, 63, 159, 1);
+    /*
+        "transition-delay: 0s;"的作用是
+        当hover开始时, transform大小这个动作不会延时。
+        只有hover结束时的transform大小这个动作才会延时。
+    */
+    transition-delay: 0s;
+}
+
+#button .icon {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: url('/images/ringButtonImages/atplus_white.png') center no-repeat;
+    background-size: 26px 18px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    transition: all 0.5s, transform 0.5s linear 0.4s;
+}
+
+#button:hover .icon {
+    background: url('/images/ringButtonImages/atplus_green.png') center no-repeat;
+    background-size: contain;
+    transform: scale(0.8);
+    transition-delay: 0s;
+}

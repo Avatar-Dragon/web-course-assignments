@@ -1,0 +1,35 @@
+body {
+    margin: auto;
+}
+
+#title {
+    font-size: 24px;
+    text-align: center;
+}
+
+form, .form {
+    margin: auto;
+    margin-top: 50px;
+    width: 450px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.text_input input {
+    float: right;
+    width: 300px;
+    height: 30px;
+}
+
+form div {
+    overflow: hidden;
+    margin: 15px;
+}
+
+.button input, button {
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+    姓名：李泽龙
+    学号：14331144
+    任务：作业5迷宫部分，完成迷宫游戏
+    思路：先做基本的UI，再做事件处理，最后再返回去调整UI的样式
+          用一个cheatBlock来检查游戏是否作弊
+    -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Maze</title> 
+        <link rel="stylesheet" type="text/css" href="/stylesheets/maze.css">
+        <script type="text/javascript" src="/javascripts/maze.js"></script>
+    </head>
+    <body>
+        <div id="maze">
+            <div id="mazeInfo1">
+                <p class="title">The Amazing Mouse Maze!</p>
+                <p class="rule">Move your mouse over the "S" to begin.</p>
+                <p id="result" class="disappear">You Win</p>
+            </div>
+            <div id="mazeBody">
+                <div id="mazeWall">
+                    <div id="leftWall" class="wall"></div>
+                    <div id="topWall" class="wall"></div>
+                    <div id="rightWall" class="wall"></div>
+                    <div id="middleWall" class="wall"></div>
+                    <div id="bottomWall" class="wall"></div>
+                </div>
+                <div id="startBlock">S</div>
+                <div id="endBlock">E</div>
+                <div id="cheatBlock"></div>
+            </div>
+            <div id="mazeInfo2">
+                <p class="rule">
+                    The object of this game is to guide the mouse cursor through the start area and get to the end area. Be sure to avoid this walls:
+                </p>
+                <div id="sampleWall"></div>
+                <p class="text">Good luck!</p>
+            </div>
+        </div>
+    </body>
+</html>

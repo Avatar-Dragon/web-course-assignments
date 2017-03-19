@@ -1,0 +1,155 @@
+#fifteenPuzzle, #gameBody, #gamePanel {
+    margin: auto;
+}
+
+#title, #startButton {
+    text-align: center;
+    font-family:"Verdana", "Tahoma", sans-serif;
+}
+
+#title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#gameBody {
+    width: 360px;
+    height: 360px;
+    position: relative;
+}
+
+#startButton {
+    margin: auto;
+    width: 150px;
+    height: 40px;
+    /*display: block; 可以使button居中的效果产生*/
+    display: block;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #4285f6;
+    color: white;
+    border: 1px solid;
+}
+
+#startButton:hover {
+    transform: scale(1.03,1.03);
+} 
+
+#gameBody div {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url("/images/panda.jpg");
+    float: left;
+    width: 88px;
+    height: 88px;
+    border: 1px solid #A8A8A8;
+    transition: all 0.2s;
+}
+
+#gameBody div:hover {
+    transform: scale(1.03,1.03);
+}
+
+/*piece1~16控制背景图片的取值范围*/
+.piece1 {
+    background-position: 0px 0px;
+}
+
+.piece2 {
+    background-position: -88px 0px;
+}
+
+.piece3 {
+    background-position: -176px 0px;
+}
+
+.piece4 {
+    background-position: -264px 0px;
+}
+
+.piece5 {
+    background-position: 0px -88px;
+}
+
+.piece6 {
+    background-position: -88px -88px;
+}
+
+.piece7 {
+    background-position: -176px -88px;
+}
+
+.piece8 {
+    background-position: -264px -88px;
+}
+
+.piece9 {
+    background-position: 0px -176px;
+}
+
+.piece10 {
+    background-position: -88px -176px;
+}
+
+.piece11 {
+    background-position: -176px -176px;
+}
+
+.piece12 {
+    background-position: -264px -176px;
+}
+
+.piece13 {
+    background-position: 0px -264px;
+}
+
+.piece14 {
+    background-position: -88px -264px;
+}
+
+.piece15 {
+    background-position: -176px -264px;
+}
+
+.piece16 {
+    background-position: -264px -264px;
+}
+
+/*p1~p16分别控制拼图块的依赖位置*/
+#p1, #p2, #p3, #p4 {
+    top: 0px;
+} 
+
+#p5, #p6, #p7, #p8 {
+    top: 90px;
+} 
+
+#p9, #p10, #p11, #p12 {
+    top: 180px;
+}
+
+#p13, #p14, #p15, #p16 {
+    top: 270px;
+}
+
+#p1, #p5, #p9, #p13 {
+    left: 0px;
+}
+
+#p2, #p6, #p10, #p14 {
+    left: 90px;
+}
+
+#p3, #p7, #p11, #p15 {
+    left: 180px;
+}
+
+#p4, #p8, #p12, #p16 {
+    left: 270px;
+}
+
+/*用于隐藏的拼图块*/
+.hide {
+    opacity: 0;
+}

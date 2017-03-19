@@ -1,0 +1,142 @@
+/*
+    姓名：李泽龙
+    学号：14331144
+    任务：作业5迷宫部分，完成迷宫游戏
+    思路：先做基本的UI，再做事件处理，最后再返回去调整UI的样式
+          用一个cheatBlock来检查游戏是否作弊
+*/
+
+#maze {
+    margin: auto;
+}
+
+#mazeBody {
+    width: 502px;
+    height: 302px;
+    margin: auto;
+    position: relative;
+}
+
+/*
+    设置迷宫、开始块和结束块的边界
+*/
+.wall, #sampleWall, #startBlock, #endBlock {
+    position: absolute;
+    background-color: #EEEEEE; 
+    border: 1px solid #000000;
+}
+
+/*
+    errWall是鼠标撞到wall时，wall应该转变的样式
+*/
+.errWall {
+    position: absolute;
+    background-color: #FF0101; 
+    border: 1px solid #000000;
+}
+
+#leftWall, #rightWall {
+    width: 150px;
+    height: 200px;
+    z-index: 0;
+}
+
+#rightWall {
+    right: 0px;
+    top: 0px;
+}
+
+#topWall {
+    width: 200px;
+    height: 50px;
+    left: 151px;
+    z-index: 1;
+    border-left: #EEEEEE;
+    border-right: #EEEEEE;
+}
+
+#middleWall {
+    width: 100px;
+    height: 150px;
+    bottom: 51px;
+    left: 200px;
+    z-index: 1;
+    border-bottom: #EEEEEE;
+}
+
+#bottomWall {
+    width: 500px;
+    height: 50px;
+    bottom: 0px;
+    z-index: 0;
+}
+
+#startBlock, #endBlock{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 55px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#startBlock {
+    background: #84FE85;
+}
+
+#endBlock {
+    right: 0px;
+    background: #8684FF;
+}
+
+/*
+    设置字体
+*/
+p, #startBlock, #endBlock {
+    font-family:"Verdana", "Tahoma", sans-serif;
+}
+
+.title, #mazeInfo1 .rule, #result {
+    text-align: center;
+    margin: 5px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+#mazeInfo1 .rule, #result{
+    font-size: 22px;
+}
+
+/*
+    设置result文字的透明度，disappear为0，,normal为100%
+*/
+.disappear {
+    opacity: 0;
+}
+
+.normal {
+    opacity: 100;
+}
+
+#cheatBlock {
+    position: absolute;
+    width: 5px;
+    height: 60px;
+    bottom: 45px;
+    right: -5px;
+}
+
+#mazeInfo2 {
+    width: 630px;
+    margin: auto;
+}
+
+#sampleWall {
+    position: relative;
+    height: 25px;
+    width: 100px;
+    left: 265px;
+}
+

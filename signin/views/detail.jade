@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    p#title 用户详情
+
+    form#form(method="get" action="/detail")
+        div.text_input 用户名:
+            input#username(readonly="readonly" value="#{user.username}") 
+
+        div.text_input 学号:
+            input#usernumber(readonly="readonly" value="#{user.usernumber}") 
+
+        div.text_input 电话:
+            input#userphone(readonly="readonly" value="#{user.userphone}") 
+
+        div.text_input 邮箱:
+            input#useremail(readonly="readonly" value="#{user.useremail}") 
+            
+    form#form2(method="POST" action="/detail2")
+        div.button
+            input#submit(type="submit" value="退出")
+            
+        if error
+            div.error!= error
+            
+        script(type="text/javascript" src="/javascripts/detail.js")

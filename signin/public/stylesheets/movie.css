@@ -1,0 +1,133 @@
+/*
+    姓名：李泽龙
+    学号：14331144
+    任务：作业2，给定一个初始的html文件(skeleton.html)和效果图，编写相应的css文件(movie.css)
+    版本2：修改了32%与rotten图片位置底部不一致的bug
+    版本3：修改了部分图片的链接，以解决未登录用户无法看到图片的bug
+*/
+body {
+    background-image:url(http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/background.png);
+    background-repeat: repeat;
+    font-size:8pt;
+    font-family:"Verdana", "Tahoma", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#banner {
+    background-image: url(http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/banner.png);
+    background-repeat: repeat-x;
+    text-align: center;
+    height: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: "Tahoma", "Verdana", sans-serif;
+}
+
+#main_body {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid grey;
+    overflow:hidden;
+}
+
+#main_body > p {
+    clear: right;
+}
+
+#generaloverview {
+    float: right;
+    width: 250px;
+    background-color: #A2B964;
+    font-size: 8pt;
+    font-family: "Arial", sans-serif;
+}
+
+#generaloverview dt {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+#generaloverview dl {
+    margin: 10px;
+}
+
+#left_central_section {
+    width: 550px;
+}
+
+#rottenbig {
+    background-image: url(http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/2/rottenbackground.png);
+    background-repeat: repeat-x;
+    height: 83px;
+    font-size: 8pt;
+    color: white;
+}
+
+#rottenbig img {
+    vertical-align: bottom;
+}
+
+#percentage {
+    font-size: 48pt;
+    color: red;
+    font-weight: bold;
+}
+
+#left_reviews {
+    float: left;
+    width: 47%;
+    padding-left: 2%;
+}
+
+#right_reviews {
+    float: right;
+    width: 47%;
+    padding-right: 2%;
+}
+
+.quote_box {
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #E1D697;
+    border: 2px solid grey;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.quote_box img {
+    padding-right: 5px;
+    float: left;
+}
+
+.publication {
+    font-style: italic;
+}
+
+.person_info {
+    margin-bottom: 3em;
+    overflow: hidden;
+}
+
+.person_info img {
+    padding-right: 5px;
+    float: left;
+}
+
+#bar {
+    text-align: center;
+    background-color: #A2B964;
+    padding:5px;
+    margin: 0;
+}
+
+#W3C_validators {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}

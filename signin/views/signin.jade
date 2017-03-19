@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    p#title 用户注册
+    
+    form#form(method="post" action="/signin")
+        div.text_input 用户名
+            input#username(name="username" value=user.username)
+
+        div.text_input 密码
+            input#userpassword(name="userpassword" value=user.userpassword type="password")
+
+        div.button
+            input#reset(type="reset")
+            input#submit(type="submit")
+    
+    form#form2(method="GET" action="/toregist")
+        div.button
+            input#submit(type="submit" value="注册")
+            
+        if error
+            div.error!= error
+            
+
+    p#error
+    script(type="text/javascript" src="/javascripts/signin.js")
+    script(type="text/javascript" src="/javascripts/validator.js")
